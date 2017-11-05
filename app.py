@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
 from selenium import webdriver
 from PIL import Image
+from config import Config
+
 
 class Log:
     def setLog(self, str):
@@ -15,6 +17,7 @@ class Log:
         str = f.readline()
         f.close()
         return str
+
 
 class ScrapKgsh:
     def get_page(self, url):
@@ -64,11 +67,14 @@ class ScrapKgsh:
         # callback
         callback()
 
+
 def put_facebook():
     graph = facebook.GraphAPI(
-        access_token='290655824762217|4fDzyyI5OvqM_S2KLWU023FBwhM')
-    # graph.put_object("525880264415772", "feed", message='테스트')
+        access_token=config.getAccessToken())
     graph.put_photo(image=open('./img/cap.png', 'rb'), message='공지')
+
+
+config = Config()
 
 scrap = ScrapKgsh()
 scrap.start(put_facebook)

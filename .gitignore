@@ -49,6 +49,7 @@ coverage.xml
 ghostdriver.log
 *.cover
 .hypothesis/
+config.py
 
 # Translations
 *.mo
