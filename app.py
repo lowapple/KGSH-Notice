@@ -4,6 +4,17 @@ from urllib.request import Request, urlopen
 from selenium import webdriver
 from PIL import Image
 
+class Log:
+    def setLog(self, str):
+        f = open('./log/notification.txt', 'w')
+        f.write(str)
+        f.close()
+
+    def getLog(self):
+        f = open('./log/notification.txt', 'r')
+        str = f.readline()
+        f.close()
+        return str
 
 class ScrapKgsh:
     def get_page(self, url):
@@ -53,13 +64,11 @@ class ScrapKgsh:
         # callback
         callback()
 
-
 def put_facebook():
     graph = facebook.GraphAPI(
-        access_token='EAAEIWZAUv1WkBANiK6EPDgf0Au5ovhWiXTDNJFXbW5vDBcSc6FrTQh58ZBVqZBVuecPjYbp4ZCiZABqhS0Atpa9lWsYiR99pGt8fT7iio2uZBhAEEuQtFPxZAmq64nywmHrRDGZAqpWu1zd366yEHMDyMoZAQSt50mEdEmV1l9t4It69aJGkTt1F7SoCjniGiubInKaES8ZBpA4gZDZD')
+        access_token='290655824762217|4fDzyyI5OvqM_S2KLWU023FBwhM')
     # graph.put_object("525880264415772", "feed", message='테스트')
     graph.put_photo(image=open('./img/cap.png', 'rb'), message='공지')
-
 
 scrap = ScrapKgsh()
 scrap.start(put_facebook)
