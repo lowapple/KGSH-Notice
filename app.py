@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import facebook
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
