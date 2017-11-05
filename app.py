@@ -13,7 +13,7 @@ class Log:
         f.close()
 
     def getLog(self):
-        f = open('./log/notification.txt', 'r')
+        f = open('./log/notification.txt', 'r+')
         str = f.readline()
         f.close()
         return str
@@ -43,38 +43,53 @@ class ScrapKgsh:
         element = soup.select("#Con > div.boardnew2011 > div.table")
         element_item = element[0].find_all('tr')[1]
 
-        notice_url = ''
+        # print(element_item)
+
         notice_url = element_item.find('a')['href']
+        next_title = element_item.find('a')['title']
+        next_title = str(next_title.encode('utf-8'))
 
-        driver.get(base_url + notice_url)
+        # 이전 값과 비교하기
+        prev_title = log.getLog()
+        if prev_title != next_title :
+            print('new post')
 
-        form_location = driver.find_element_by_id('form_view').location
-        form_size = driver.find_element_by_id('form_view').size
+            # 값 세팅
+            log.setLog(next_title)
 
-        driver.execute_script('document.body.style.background = "white"')
-        driver.save_screenshot('./img/cap.png')
-        driver.quit()
+            # 글 작성하기
+            driver.get(base_url + notice_url)
 
-        left = form_location['x'] - 35
-        top = form_location['y'] + 50
-        right = left + form_size['width'] + 65
-        bottom = top + form_size['height'] - 70
+            form_location = driver.find_element_by_id('form_view').location
+            form_size = driver.find_element_by_id('form_view').size
 
-        cap_image = Image.open('./img/cap.png')
-        cap_image = cap_image.crop((left, top, right, bottom))
-        cap_image.save('./img/cap.png')
+            driver.execute_script('document.body.style.background = "white"')
+            driver.save_screenshot('./img/cap.png')
+            driver.quit()
 
-        # callback
-        callback()
+            left = form_location['x'] - 35
+            top = form_location['y'] + 50
+            right = left + form_size['width'] + 65
+            bottom = top + form_size['height'] - 70
+
+            cap_image = Image.open('./img/cap.png')
+            cap_image = cap_image.crop((left, top, right, bottom))
+            cap_image.save('./img/cap.png')
+
+            # callback
+            callback()
+        else:
+            print('old post')
 
 
 def put_facebook():
     graph = facebook.GraphAPI(
         access_token=config.getAccessToken())
-    graph.put_photo(image=open('./img/cap.png', 'rb'), message='공지')
+    # graph.put_photo(image=open('./img/cap.png', 'rb'), message='공지')
 
 
 config = Config()
+log = Log()
 
 scrap = ScrapKgsh()
 scrap.start(put_facebook)
