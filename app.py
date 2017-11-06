@@ -87,7 +87,7 @@ class ScrapKgsh:
 def put_facebook():
     graph = facebook.GraphAPI(
         access_token=config.getAccessToken())
-    # graph.put_photo(image=open('./img/cap.png', 'rb'), message='공지')
+    graph.put_photo(image=open('./img/cap.png', 'rb'), message='공지')
 
 
 config = Config()

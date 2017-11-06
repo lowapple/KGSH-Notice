@@ -1,5 +1,30 @@
-[INFO  - 2017-11-05T13:02:21.845Z] GhostDriver - Main - running on port 51674
-[INFO  - 2017-11-05T13:02:22.916Z] Session [905644f0-c229-11e7-bfe5-4523b35874e1] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
-[INFO  - 2017-11-05T13:02:22.916Z] Session [905644f0-c229-11e7-bfe5-4523b35874e1] - page.customHeaders:  - {}
-[INFO  - 2017-11-05T13:02:22.916Z] Session [905644f0-c229-11e7-bfe5-4523b35874e1] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2017-11-05T13:02:22.916Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 905644f0-c229-11e7-bfe5-4523b35874e1
+[INFO  - 2017-11-05T14:35:46.591Z] GhostDriver - Main - running on port 53590
+[INFO  - 2017-11-05T14:35:47.356Z] Session [9cd7f270-c236-11e7-a02b-63dd7bb8493f] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-11-05T14:35:47.356Z] Session [9cd7f270-c236-11e7-a02b-63dd7bb8493f] - page.customHeaders:  - {}
+[INFO  - 2017-11-05T14:35:47.357Z] Session [9cd7f270-c236-11e7-a02b-63dd7bb8493f] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-11-05T14:35:47.357Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 9cd7f270-c236-11e7-a02b-63dd7bb8493f
+[ERROR - 2017-11-05T14:35:49.076Z] Session [9cd7f270-c236-11e7-a02b-63dd7bb8493f] - page.onError - msg: TypeError: undefined is not an object (evaluating 'data[0].total_count')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-11-05T14:35:49.077Z] Session [9cd7f270-c236-11e7-a02b-63dd7bb8493f] - page.onError - stack:
+  (anonymous function) (http://www.game.hs.kr/2013/skin/board/editor_gongji/jscss/sns.js:129)
+  n (http://www.game.hs.kr/common/js/jquery-1.7.1.min.js:2)
+  fireWith (http://www.game.hs.kr/common/js/jquery-1.7.1.min.js:2)
+  w (http://www.game.hs.kr/common/js/jquery-1.7.1.min.js:4)
+  onreadystatechange (http://www.game.hs.kr/common/js/jquery-1.7.1.min.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-11-05T14:35:50.458Z] Session [9cd7f270-c236-11e7-a02b-63dd7bb8493f] - page.onError - msg: ReferenceError: Can't find variable: iframes
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-11-05T14:35:50.458Z] Session [9cd7f270-c236-11e7-a02b-63dd7bb8493f] - page.onError - stack:
+  global code (https://plusone.google.com/_/+1/fastbutton?url=http%3A%2F%2Fwww.game.hs.kr%2F2013%2Finner.php%3FsMenu%3DG1000%26mode%3Dview%26no%3D1084&size=small&count=true&hl=ko&jsh=m%3B%2F_%2Fapps-static%2F_%2Fjs%2Fgapi%2F__features__%2Frt%3Dj%2Fver%3DYN7Z_8OOVyU.ko.%2Fsv%3D1%2Fam%3D!gKheacShCOSIvSNZRg%2Fd%3D1%2Frs%3DAItRSTPY6qBgdqwJbGbucq2OSGsYuW5vYw#id=I1_1336099512116&parent=http%3A%2F%2Fwww.hani.co.kr&rpctoken=14565190&_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart:96)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-11-05T14:35:50.458Z] Session [9cd7f270-c236-11e7-a02b-63dd7bb8493f] - page.onError - msg: ReferenceError: Can't find variable: iframes
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-11-05T14:35:50.459Z] Session [9cd7f270-c236-11e7-a02b-63dd7bb8493f] - page.onError - stack:
+  global code (https://plusone.google.com/_/+1/fastbutton?url=http%3A%2F%2Fwww.game.hs.kr%2F2013%2Finner.php%3FsMenu%3DG1000%26mode%3Dview%26no%3D1084&size=small&count=true&hl=ko&jsh=m%3B%2F_%2Fapps-static%2F_%2Fjs%2Fgapi%2F__features__%2Frt%3Dj%2Fver%3DYN7Z_8OOVyU.ko.%2Fsv%3D1%2Fam%3D!gKheacShCOSIvSNZRg%2Fd%3D1%2Frs%3DAItRSTPY6qBgdqwJbGbucq2OSGsYuW5vYw#id=I1_1336099512116&parent=http%3A%2F%2Fwww.hani.co.kr&rpctoken=14565190&_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart:96)
+
+  phantomjs://platform/console++.js:263 in error
