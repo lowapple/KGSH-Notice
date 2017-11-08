@@ -49,11 +49,14 @@ class ScrapKgsh:
 
         notice_url = element_item.find('a')['href']
         next_title = element_item.find('a')['title']
+
+        facebook_message = next_title
+
         next_title = str(next_title.encode('utf-8'))
 
         # 이전 값과 비교하기
         prev_title = log.getLog()
-        if prev_title != next_title :
+        if prev_title != next_title:
             print('new post')
 
             # 값 세팅
@@ -79,19 +82,19 @@ class ScrapKgsh:
             cap_image.save('./img/cap.png')
 
             # callback
-            callback()
+            callback(facebook_message)
         else:
             print('old post')
 
 
-def put_facebook():
+def put_facebook(message):
     graph = facebook.GraphAPI(
         access_token=config.getAccessToken())
-    graph.put_photo(image=open('./img/cap.png', 'rb'), message='공지')
+    graph.put_photo(image=open('./img/cap.png', 'rb'), message=message)
 
 
 config = Config()
 log = Log()
-
 scrap = ScrapKgsh()
+
 scrap.start(put_facebook)
