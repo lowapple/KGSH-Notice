@@ -86,7 +86,6 @@ class ScrapKgsh:
         else:
             print('old post')
 
-
 def put_facebook(message):
     graph = facebook.GraphAPI(
         access_token=config.getAccessToken())
