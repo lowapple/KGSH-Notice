@@ -54,6 +54,8 @@ class ScrapKgsh:
 
         next_title = str(next_title.encode('utf-8'))
 
+        print(next_title)
+
         # 이전 값과 비교하기
         prev_title = log.getLog()
         if prev_title != next_title:
