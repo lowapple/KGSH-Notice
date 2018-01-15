@@ -7,6 +7,7 @@ from selenium import webdriver
 from PIL import Image
 from config import Config
 import sys
+import time
 
 class Log:
     def setLog(self, str):
@@ -36,7 +37,7 @@ class ScrapKgsh:
         base_url = "http://www.game.hs.kr/2013/"
         notice_list_url = "inner.php?sMenu=G1000"
 
-        driver = webdriver.PhantomJS('./bin/linux/phantomjs')
+        driver = webdriver.PhantomJS('./bin/mac/phantomjs')
 
         # 페이지 가져오기
         soup = self.get_page(url=base_url + notice_list_url)
@@ -96,4 +97,6 @@ config = Config()
 log = Log()
 scrap = ScrapKgsh()
 
-scrap.start(put_facebook)
+while True:
+    scrap.start(put_facebook)
+    time.sleep(5)
