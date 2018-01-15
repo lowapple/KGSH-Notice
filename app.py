@@ -52,7 +52,7 @@ class ScrapKgsh:
 
         facebook_message = next_title
 
-	print(next_title)
+	    print(next_title)
 
         next_title = str(next_title.encode('utf-8'))
 
