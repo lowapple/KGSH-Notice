@@ -6,7 +6,7 @@ from urllib.request import Request, urlopen
 from selenium import webdriver
 from PIL import Image
 from config import Config
-
+import sys
 
 class Log:
     def setLog(self, str):
@@ -36,7 +36,7 @@ class ScrapKgsh:
         base_url = "http://www.game.hs.kr/2013/"
         notice_list_url = "inner.php?sMenu=G1000"
 
-        driver = webdriver.PhantomJS('./bin/linux/phantomjs')
+        driver = webdriver.PhantomJS('./bin/mac/phantomjs')
 
         # 페이지 가져오기
         soup = self.get_page(url=base_url + notice_list_url)
@@ -51,8 +51,6 @@ class ScrapKgsh:
         next_title = element_item.find('a')['title']
 
         facebook_message = next_title
-        
-        next_title = str(next_title.encode('utf-8'))
 
         print(next_title)
 
