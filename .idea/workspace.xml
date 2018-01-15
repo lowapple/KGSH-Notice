@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="858aa8b9-b492-4e8c-89a3-87ea5bc6db3c" name="Default" comment="" />
+    <list default="true" id="858aa8b9-b492-4e8c-89a3-87ea5bc6db3c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
+      <change beforePath="$PROJECT_DIR$/scrap_kgsh_notification.py" afterPath="$PROJECT_DIR$/scrap_kgsh_notification.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,11 +18,10 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-44">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="638">
+              <caret line="98" column="25" lean-forward="true" selection-start-line="98" selection-start-column="25" selection-end-line="98" selection-end-column="25" />
               <folding>
                 <element signature="e#25#40#0" expanded="true" />
-                <element signature="e#211#456#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -67,8 +70,8 @@
       <file leaf-file-name="scrap_kgsh_notification.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scrap_kgsh_notification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="113">
+              <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -96,16 +99,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scrap_kgsh_notification.py" />
         <option value="$PROJECT_DIR$/setting.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/log/notification.txt" />
+        <option value="$PROJECT_DIR$/scrap_kgsh_notification.py" />
         <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="44" />
     <option name="y" value="23" />
     <option name="width" value="1396" />
@@ -140,6 +143,12 @@
               <item name="KGSH-Notice" type="b2602c69:ProjectViewProjectNode" />
               <item name="KGSH-Notice" type="462c0819:PsiDirectoryNode" />
               <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KGSH-Notice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KGSH-Notice" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="linux" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="KGSH-Notice" type="b2602c69:ProjectViewProjectNode" />
@@ -249,7 +258,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="44" y="23" width="1396" height="877" extended-state="1" />
+    <frame x="44" y="23" width="1396" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25071633" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -286,7 +295,6 @@
           <caret line="38" column="39" lean-forward="false" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
           <folding>
             <element signature="e#25#40#0" expanded="true" />
-            <element signature="e#211#456#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -339,7 +347,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#25#40#0" expanded="true" />
-            <element signature="e#211#456#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -386,7 +393,6 @@
           <caret line="66" column="19" lean-forward="false" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
           <folding>
             <element signature="e#25#40#0" expanded="true" />
-            <element signature="e#211#456#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -425,7 +431,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#25#40#0" expanded="true" />
-            <element signature="e#211#456#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -448,23 +453,12 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#25#40#0" expanded="true" />
-            <element signature="e#211#456#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/setting.py" />
     <entry file="file:///usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/lib/python3.6/urllib/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/scrap_kgsh_notification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/site-packages/bs4/element.py" />
     <entry file="file://$PROJECT_DIR$/ghostdriver.log">
       <provider selected="true" editor-type-id="text-editor">
@@ -499,13 +493,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scrap_kgsh_notification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="638">
+          <caret line="98" column="25" lean-forward="true" selection-start-line="98" selection-start-column="25" selection-end-line="98" selection-end-column="25" />
           <folding>
             <element signature="e#25#40#0" expanded="true" />
-            <element signature="e#211#456#0" expanded="false" />
           </folding>
         </state>
       </provider>

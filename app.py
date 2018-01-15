@@ -36,7 +36,7 @@ class ScrapKgsh:
         base_url = "http://www.game.hs.kr/2013/"
         notice_list_url = "inner.php?sMenu=G1000"
 
-        driver = webdriver.PhantomJS('./bin/mac/phantomjs')
+        driver = webdriver.PhantomJS('./bin/linux/phantomjs')
 
         # 페이지 가져오기
         soup = self.get_page(url=base_url + notice_list_url)
