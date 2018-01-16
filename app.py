@@ -9,6 +9,8 @@ from config import Config
 import sys
 import time
 
+config = Config()    
+
 class Log:
     def setLog(self, str):
         f = open('./log/notification.txt', 'w')
@@ -20,7 +22,6 @@ class Log:
         str = f.readline()
         f.close()
         return str
-
 
 class ScrapKgsh:
     def __init__(self):
@@ -84,7 +85,6 @@ class ScrapKgsh:
             print('old post')
 
 def put_facebook(message):
-    config = Config()    
     graph = facebook.GraphAPI(
         access_token=config.getAccessToken())
     graph.put_photo(image=open('./img/cap.png', 'rb'), message=message)
@@ -93,3 +93,4 @@ while True:
     scrap = ScrapKgsh()
     scrap.start(put_facebook)
     time.sleep(10)
+    scrap = None
