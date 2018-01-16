@@ -27,6 +27,7 @@ class ScrapKgsh:
         self.base_url = "http://www.game.hs.kr/2013/"
         self.notice_list_url = "inner.php?sMenu=G1000"
         self.driver = webdriver.PhantomJS('./bin/linux/phantomjs')
+        self.log = Log()
         
         req = Request(self.base_url + self.notice_list_url, headers={'User-Agent': 'Mozilla/5.0'})
         res = urlopen(req)
@@ -50,13 +51,13 @@ class ScrapKgsh:
         print(next_title)
 
         # 이전 값과 비교하기
-        prev_title = log.getLog()
+        prev_title = self.log.getLog()
 
         if prev_title != next_title:
             print('new post')
 
             # 값 세팅
-            log.setLog(next_title)
+            self.log.setLog(next_title)
 
             # 글 작성하기
             self.driver.get(self.base_url + self.notice_url)
@@ -83,14 +84,12 @@ class ScrapKgsh:
             print('old post')
 
 def put_facebook(message):
+    config = Config()    
     graph = facebook.GraphAPI(
         access_token=config.getAccessToken())
     graph.put_photo(image=open('./img/cap.png', 'rb'), message=message)
 
-config = Config()
-log = Log()
-
 while True:
     scrap = ScrapKgsh()
     scrap.start(put_facebook)
-    time.sleep(5)
+    time.sleep(10)
