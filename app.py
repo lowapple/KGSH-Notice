@@ -38,7 +38,7 @@ class ScrapKgsh:
     def start(self, callback):
         # 최상단 요소 가져오
         element = self.soup.select("#Con > div.boardnew2011 > div.table")
-        element_item = self.element[0].find_all('tr')[1]
+        element_item = element[0].find_all('tr')[1]
 
         # print(element_item)
 
