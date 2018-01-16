@@ -23,22 +23,19 @@ class Log:
 
 
 class ScrapKgsh:
+    def __init__(self):
+        self.base_url = "http://www.game.hs.kr/2013/"
+        self.notice_list_url = "inner.php?sMenu=G1000"
+        self.driver = webdriver.PhantomJS('./bin/linux/phantomjs')
+
     def get_page(self, url):
-        # URL Load
         req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         res = urlopen(req)
         res = res.read()
         html = res.decode('utf-8')
-
         return BeautifulSoup(html, 'html.parser')
 
     def start(self, callback):
-        # 게임고 공지 홈페이지
-        base_url = "http://www.game.hs.kr/2013/"
-        notice_list_url = "inner.php?sMenu=G1000"
-
-        driver = webdriver.PhantomJS('./bin/linux/phantomjs')
-
         # 페이지 가져오기
         soup = self.get_page(url=base_url + notice_list_url)
 
@@ -57,6 +54,7 @@ class ScrapKgsh:
 
         # 이전 값과 비교하기
         prev_title = log.getLog()
+
         if prev_title != next_title:
             print('new post')
 
@@ -92,11 +90,10 @@ def put_facebook(message):
         access_token=config.getAccessToken())
     graph.put_photo(image=open('./img/cap.png', 'rb'), message=message)
 
-
 config = Config()
 log = Log()
-scrap = ScrapKgsh()
 
 while True:
+    scrap = ScrapKgsh()
     scrap.start(put_facebook)
     time.sleep(5)
