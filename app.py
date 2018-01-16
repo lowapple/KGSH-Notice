@@ -27,21 +27,18 @@ class ScrapKgsh:
         self.base_url = "http://www.game.hs.kr/2013/"
         self.notice_list_url = "inner.php?sMenu=G1000"
         self.driver = webdriver.PhantomJS('./bin/linux/phantomjs')
-
-    def get_page(self, url):
+        
         req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         res = urlopen(req)
         res = res.read()
         html = res.decode('utf-8')
-        return BeautifulSoup(html, 'html.parser')
+
+        self.soup = BeautifulSoup(html, 'html.parser')
 
     def start(self, callback):
-        # 페이지 가져오기
-        soup = self.get_page(url=base_url + notice_list_url)
-
         # 최상단 요소 가져오
-        element = soup.select("#Con > div.boardnew2011 > div.table")
-        element_item = element[0].find_all('tr')[1]
+        element = self.soup.select("#Con > div.boardnew2011 > div.table")
+        element_item = self.element[0].find_all('tr')[1]
 
         # print(element_item)
 
@@ -62,14 +59,14 @@ class ScrapKgsh:
             log.setLog(next_title)
 
             # 글 작성하기
-            driver.get(base_url + notice_url)
+            self.driver.get(self.base_url + self.notice_url)
 
-            form_location = driver.find_element_by_id('form_view').location
-            form_size = driver.find_element_by_id('form_view').size
+            form_location = self.driver.find_element_by_id('form_view').location
+            form_size = self.driver.find_element_by_id('form_view').size
 
-            driver.execute_script('document.body.style.background = "white"')
-            driver.save_screenshot('./img/cap.png')
-            driver.quit()
+            self.driver.execute_script('document.body.style.background = "white"')
+            self.driver.save_screenshot('./img/cap.png')
+            self.driver.quit()
 
             left = form_location['x'] - 35
             top = form_location['y'] + 50
