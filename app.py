@@ -28,7 +28,7 @@ class ScrapKgsh:
         self.notice_list_url = "inner.php?sMenu=G1000"
         self.driver = webdriver.PhantomJS('./bin/linux/phantomjs')
         
-        req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        req = Request(self.base_url + self.notice_list_url, headers={'User-Agent': 'Mozilla/5.0'})
         res = urlopen(req)
         res = res.read()
         html = res.decode('utf-8')
