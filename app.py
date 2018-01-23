@@ -44,12 +44,12 @@ class ScrapKgsh:
 
         # print(element_item)
 
-        notice_url = element_item.find('a')['href']
-        next_title = element_item.find('a')['title']
+        self.notice_url = element_item.find('a')['href']
+        self.next_title = element_item.find('a')['title']
 
-        facebook_message = next_title
+        self.facebook_message = self.next_title
 
-        print(next_title)
+        print(self.next_title)
 
         # 이전 값과 비교하기
         prev_title = self.log.getLog()
@@ -58,7 +58,7 @@ class ScrapKgsh:
             print('new post')
 
             # 값 세팅
-            self.log.setLog(next_title)
+            self.log.setLog(self.next_title)
 
             # 글 작성하기
             self.driver.get(self.base_url + self.notice_url)
@@ -80,7 +80,7 @@ class ScrapKgsh:
             cap_image.save('./img/cap.png')
 
             # callback
-            callback(facebook_message)
+            callback(self.facebook_message)
         else:
             print('old post')
 
