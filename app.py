@@ -54,7 +54,7 @@ class ScrapKgsh:
         # 이전 값과 비교하기
         prev_title = self.log.getLog()
 
-        if prev_title != next_title:
+        if prev_title != self.next_title:
             print('new post')
 
             # 값 세팅
