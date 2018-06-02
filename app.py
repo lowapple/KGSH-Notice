@@ -8,8 +8,10 @@ from PIL import Image
 from config import Config
 import sys
 import time
+from slacker import Slacker
 
-config = Config()    
+slack = Slacker('xoxp-302883621299-302969311396-302437443329-86e2e918d8f33894516161a2f1d92274')
+config = Config()
 
 class Log:
     def setLog(self, str):
@@ -27,7 +29,7 @@ class ScrapKgsh:
     def __init__(self):
         self.base_url = "http://www.game.hs.kr/2013/"
         self.notice_list_url = "inner.php?sMenu=G1000"
-        self.driver = webdriver.PhantomJS('./bin/linux/phantomjs')
+        self.driver = webdriver.PhantomJS('./bin/mac/phantomjs')
         self.log = Log()
         
         req = Request(self.base_url + self.notice_list_url, headers={'User-Agent': 'Mozilla/5.0'})
@@ -56,6 +58,7 @@ class ScrapKgsh:
 
         if prev_title != self.next_title:
             print('new post')
+            slack.chat.post_message('#general', 'Hellow')
 
             # 값 세팅
             self.log.setLog(self.next_title)
@@ -80,7 +83,7 @@ class ScrapKgsh:
             cap_image.save('./img/cap.png')
 
             # callback
-            callback(self.facebook_message)
+            # callback(self.facebook_message)
         else:
             print('old post')
 
@@ -90,7 +93,9 @@ def put_facebook(message):
     graph.put_photo(image=open('./img/cap.png', 'rb'), message=message)
 
 while True:
-    scrap = ScrapKgsh()
-    scrap.start(put_facebook)
-    time.sleep(10)
-    scrap = None
+    try:
+        scrap = ScrapKgsh()
+        scrap.start(put_facebook)
+    finally:
+        time.sleep(10)
+        scrap = None

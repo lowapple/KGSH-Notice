@@ -11,6 +11,7 @@ name = "pypi"
 facebook-sdk = "*"
 selenium = "*"
 pillow = "*"
+slacker = "*"
 
 
 [dev-packages]
